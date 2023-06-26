@@ -46,6 +46,17 @@ public class InsUpdActivity extends AppCompatActivity {
                     //set ket qua tra ve
                     setResult(RESULT_OK,updIntent);
                     finish();
+                }else if(action.equals("insert")){
+                    Intent insIntent = new Intent();
+                    insIntent.putExtra("action", action);
+                    DanhBa danhBa = new DanhBa();danhBa.setTen(etTen.getText().toString());
+                    danhBa.setSoDT(etSDT.getText().toString());
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("ins", danhBa);
+                    insIntent.putExtras(bundle);
+                    setResult(RESULT_OK, insIntent);
+                    finish();
+
                 }
             }
         });

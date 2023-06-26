@@ -27,10 +27,12 @@ import java.util.List;
 public class DanhBaAdapter extends ArrayAdapter<DanhBa> {
     Context context;
     List<DanhBa> lsData;
+    DanhBaAdapter adapter;
     public DanhBaAdapter(@NonNull Context context, List<DanhBa> lsDba) {
         super(context,0 ,lsDba);
         this.context = context;
         lsData = lsDba;
+        adapter= this;
     }
 
     @Override
@@ -75,6 +77,7 @@ public class DanhBaAdapter extends ArrayAdapter<DanhBa> {
                 bundle.putSerializable("danhba", danhBa);
                 data.putExtras(bundle);
                 callUpd.launch(data);
+
             }
         });
 
@@ -91,6 +94,8 @@ public class DanhBaAdapter extends ArrayAdapter<DanhBa> {
                     public void onClick(DialogInterface dialog, int which) {
                         DanhBaDB database = new DanhBaDB(context);
                         database.delDanhBa(danhBa.getTen());
+                        lsData =database.getAllDanhBa();
+                        adapter.notifyDataSetChanged();
                         dialog.dismiss();
                     }
                 });
@@ -104,8 +109,8 @@ public class DanhBaAdapter extends ArrayAdapter<DanhBa> {
                         });
                 AlertDialog alert =dialog.create();
                 alert.show();
-            }
 
+            }
 
         });
 
@@ -153,6 +158,8 @@ public class DanhBaAdapter extends ArrayAdapter<DanhBa> {
                                         Toast.LENGTH_LONG).show();
                             }
                             //refresh adapter
+                            lsData =database.getAllDanhBa();
+                            adapter.notifyDataSetChanged();
                         }
                     }
                 }

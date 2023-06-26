@@ -6,21 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".SendSmsActivity">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="391dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="4dp"
-        android:gravity="center"
-        android:text="GUI TIN NHAN"
-        android:textColor="#673AB7"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="106dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="22dp"
+        android:text="GUI"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnHuy"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/etContent" />
+
+    <Button
+        android:id="@+id/btnHuy"
+        android:layout_width="93dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="22dp"
+        android:text="HUY"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnSend"
+        app:layout_constraintTop_toBottomOf="@+id/etContent" />
 
     <EditText
         android:id="@+id/etContent"
@@ -67,35 +78,8 @@
             android:inputType="phone"
             android:textColor="#673AB7"
             android:textSize="24sp" />
+
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnSend"
-        android:layout_width="106dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="66dp"
-        android:text="GUI"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etContent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/btnHuy"
-        android:layout_width="93dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="22dp"
-        android:text="HUY"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnSend"
-        app:layout_constraintTop_toBottomOf="@+id/etContent" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -130,4 +114,27 @@
             android:textSize="24sp" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="391dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:text="GUI TIN NHAN"
+        android:textColor="#673AB7"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
