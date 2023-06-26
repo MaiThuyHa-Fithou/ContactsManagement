@@ -20,8 +20,10 @@
             android:id="@+id/tvTen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:layout_weight="1"
             android:hint="Ten lien he"
+            android:padding="5dp"
             android:textColor="#673AB7"
             android:textSize="20sp" />
 
@@ -29,8 +31,10 @@
             android:id="@+id/tvDienThoai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:layout_weight="1"
             android:hint="so dien thoai"
+            android:padding="5dp"
             android:textColor="#673AB7"
             android:textSize="20sp" />
     </LinearLayout>

@@ -67,6 +67,26 @@ public class DanhBaDB extends SQLiteOpenHelper {
                 insert(TB_NAME,null,values);
     }
 
+    public int udpDanhBa(DanhBa db, int id){
+        ContentValues values = new ContentValues();
+        values.put(TEN, db.getTen());
+        values.put(SODT,db.getSoDT());
+        String whereArg[] ={id+""};
+        return this.getWritableDatabase().update(TB_NAME,values,
+                ID+"=?", whereArg);
+    }
+
+    public int delDanhBa(int id){
+        String whereArg[]={id+""};
+        return this.getWritableDatabase().delete(TB_NAME,
+                ID+"=?", whereArg);
+    }
+
+    public int delDanhBa(String ten){
+        String whereArg[]={ten};
+        return this.getWritableDatabase().delete(TB_NAME,
+                TEN+"=?", whereArg);
+    }
     public List<DanhBa> getAllDanhBa(){
         List<DanhBa> kq = new ArrayList<DanhBa>();
         Cursor cursor = this.getReadableDatabase().
